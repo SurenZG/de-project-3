@@ -10,11 +10,11 @@ CREATE TABLE if not exists staging_prod.user_order_log(
    customer_id        bigint,
    first_name         varchar(100),
    last_name          varchar(100),
-   item_name		  varchar(100),
+   item_name	      varchar(100),
    item_id            integer,
    quantity           bigint,
    payment_amount     numeric(14, 2),
-   status			  varchar(100),
+   status	      varchar(100),
    PRIMARY KEY (ID)
 );
 
