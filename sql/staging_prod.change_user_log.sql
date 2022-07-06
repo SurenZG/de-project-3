@@ -18,17 +18,10 @@ CREATE TABLE if not exists staging_prod.user_order_log(
    PRIMARY KEY (ID)
 );
 
-insert into staging_prod.user_order_log (date_time, city_id, city_name, customer_id,
-	                                       first_name, last_name, item_id, item_name,
-                                         quantity, payment_amount, status)
-select distinct  date_time,
-                 city_id,
-                 city_name,
-                 customer_id,
-                 first_name,
-                 last_name,
-                 item_id,
-                 item_name,
+insert into staging_prod.user_order_log (date_time, city_id, city_name, customer_id, 
+	                                 first_name, last_name, item_id, item_name, quantity, payment_amount, status)
+select distinct  date_time, city_id, city_name, customer_id, 
+		 first_name, last_name, item_id, item_name,
                  case when status = 'refunded' then - quantity else quantity end quantity,
                  case when status = 'refunded' then - payment_amount else payment_amount end payment_amount,
                  status
