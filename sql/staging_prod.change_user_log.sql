@@ -1,7 +1,5 @@
 create schema if not exists staging_prod;
 
-drop table if exists staging_prod.user_order_log;
-
 CREATE TABLE if not exists staging_prod.user_order_log(
    ID serial,
    date_time          TIMESTAMP,
